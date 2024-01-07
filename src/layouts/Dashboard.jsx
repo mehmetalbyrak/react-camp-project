@@ -6,10 +6,12 @@ import { Route, Routes } from "react-router-dom";
 import ProductList from "../pages/ProductList";
 import ProductDetail from "../pages/ProductDetail";
 import CartDetail from "../pages/CartDetail";
+import { ToastContainer } from "react-toastify";
 
 export default function Dashboard() {
   return (
     <div>
+      <ToastContainer position="bottom-right" />
       <Grid>
         <Grid.Row>
           <Grid.Column width={4}>
