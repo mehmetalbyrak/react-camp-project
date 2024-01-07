@@ -8,11 +8,17 @@ const initialState = {
 export default function cartReducer(state = initialState, { type, payload }) {
   switch (type) {
     case ADD_TO_CART:
-      let product = state.cartItems.find((c) => c.product.id === payload.id);
-      if (product) {
-        product.quantity++;
+      let existingProduct = state.cartItems.find(
+        (c) => c.product.id === payload.id
+      );
+      if (existingProduct) {
         return {
-          ...state, // as new --> new object
+          ...state,
+          cartItems: state.cartItems.map((item) =>
+            item.product.id === payload.id
+              ? { ...item, quantity: item.quantity + 1 }
+              : item
+          ),
         };
       } else {
         return {
