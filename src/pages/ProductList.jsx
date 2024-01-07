@@ -26,8 +26,10 @@ export default function ProductList() {
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell>Title</Table.HeaderCell>
-            <Table.HeaderCell>Description</Table.HeaderCell>
             <Table.HeaderCell>Price</Table.HeaderCell>
+            <Table.HeaderCell>Stock</Table.HeaderCell>
+            <Table.HeaderCell>Description</Table.HeaderCell>
+            <Table.HeaderCell>Category</Table.HeaderCell>
           </Table.Row>
         </Table.Header>
         <Table.Body>
@@ -36,8 +38,10 @@ export default function ProductList() {
               <Table.Cell>
                 <Link to={`/products/${product.id}`}>{product.title}</Link>
               </Table.Cell>
-              <Table.Cell>{product.description}</Table.Cell>
               <Table.Cell>{product.price}</Table.Cell>
+              <Table.Cell>{product.stock}</Table.Cell>
+              <Table.Cell>{product.description}</Table.Cell>
+              <Table.Cell>{product.category}</Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>
