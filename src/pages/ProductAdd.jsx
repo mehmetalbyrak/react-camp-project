@@ -7,7 +7,7 @@ import KodlamaIoTextInput from "../utilities/customFormControls/KodlamaIoTextInp
 export default function () {
   const initialValues = { title: "", price: 90 };
   const schema = Yup.object({
-    title: Yup.string().required("Product Titleis required"),
+    title: Yup.string().required("Product Title is required"),
     price: Yup.number()
       .required("Product Price is required")
       .positive("Please enter a positive number"),
